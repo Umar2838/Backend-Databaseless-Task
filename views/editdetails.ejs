@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <div class="w-full min-h-screen text-white p-10 bg-zinc-900" >
+        <a href="/" class="text-blue-500 inline-block mb-10">Go back to Home</a>
+    <form action="/editdetails" method="post" >
+        <textarea name="prev-details" class="block outline-none w-full rounded-md text-zinc-400 mt-2 py-2 px-3 bg-zinc-800 resize-none"  placeholder="Previous details" value="<%= filedata%>" ></textarea>    
+        <textarea name="new-details" class="block outline-none w-full rounded-md text-zinc-400 mt-2 py-2 px-3 bg-zinc-800 resize-none"  placeholder="write your task details" ></textarea>    
+        <input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Edit Details" >
+        </form>
+        </div>
+</body>
+</html>

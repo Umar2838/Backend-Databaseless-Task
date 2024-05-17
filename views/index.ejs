@@ -13,7 +13,7 @@
     <form action="/create" method="post" >
 <input name="title" class="block outline-none  w-full rounded-md py-2 px-3 bg-zinc-800 " type="text" placeholder="Title goes here" >
 <textarea name="details" class="block outline-none w-full rounded-md mt-2 py-2 px-3 bg-zinc-800 resize-none"  placeholder="write your task details" ></textarea>    
-<input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Submit" >
+<input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Create Task" >
 </form>
 </div>
 <div class="tasks flex gap-3 flex-wrap p-10" >
@@ -21,8 +21,15 @@
     <% files.forEach(function(val){ %>
         <div class="task w-72 rounded-md px-3 py-4 bg-zinc-800" >
             <h1 class="text-white text-2xl tracking-tighter" ><%= val%></h1>
-            <a class="text-blue-500 inline-block mt-3" href="/file/<%=val%>" >Read More</a>  
+          <div class="flex w-full justify-between items-center mt-3" >
+
+              <a class="text-blue-500 text-[12px] inline-block " href="/file/<%=val%>" >Read More</a>  
+              <a class="text-zinc-400 text-[12px] inline-block" href="/edit/<%=val %>" >Edit Filename</a>
+              <a class="text-zinc-400 text-[12px] inline-block" href="/editdetails/<%=val %>" >Edit Details</a>
+              <a class="text-zinc-400 text-[12px] inline-block" href="/delete/<%=val %>" >Delete File</a>
+
             </div>
+        </div>
    <% }) %>
   <% } else { %>
         <h3 class="text-zinc-400" >No tasks yet.</h3>
